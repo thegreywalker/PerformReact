@@ -35,18 +35,24 @@ const todoSlice = createSlice({
             });
         },
         addTodo: (state, action) => {
-            const todo = state.map(cat => cat.filter(
-                (cat) => cat.catId === action.payload.catId
-            ));
-            todo.push({
+            const index = state.map((cat, idx) => {
+                if(cat.catId === action.payload.catId) {
+                    return idx;
+                } 
+            })
+            
+            const todos = state[index].todos;
+            console.log(current(todos));
+            todos.push({
                 todoId: action.payload.todoId,
                 name: action.payload.name,
                 desc: action.payload.desc,
             });
         },
         deleteTodo: (state, action) => {
-            const index = state[0].todos.findIndex(todo => todo.todoId === action.payload);
-            state[0].todos.splice(index, 1)
+            // const index = state[0].todos.findIndex(todo => todo.todoId === action.payload);
+            // state[0].todos.splice(index, 1)
+            state[0].todos = state[0].todos.filter(todo => todo.todoId !== action.payload)
         },
     },
 });

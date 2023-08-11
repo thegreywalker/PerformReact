@@ -3,12 +3,17 @@ import styles from "./GroupTodo.module.css";
 import { useSelector } from "react-redux";
 import AllTodos from "../Todos/AllTodos";
 import Button from "../Button/Button";
+import { createPortal } from "react-dom";
+import TodoModal from "../Forms/TodoModal";
 
-const GroupTodo = ({ showItems, setShowItems }) => {
+const GroupTodo = () => {
+    const [showItems, setShowItems] = React.useState(false);
+    const [showModal, setShowModal] = React.useState(false);
     const todoCategories = useSelector((store) => store.todo);
     const handleToggle = () => {
-        setShowItems();
+        setShowItems(!showItems);
     }
+
 
 
     return (
@@ -22,6 +27,11 @@ const GroupTodo = ({ showItems, setShowItems }) => {
                             className={styles.groupTodoContainer}
                             key={todoCat.catId}
                         >
+                            {console.log(todoCat.catId)}
+                            {showModal && createPortal(
+                                <TodoModal catId={todoCat.catId} onClose={() => setShowModal(false)} />,
+                                document.getElementById("portal")
+                            )}
                             <div 
                                 className={styles.todoContainer}
                                 >
@@ -61,6 +71,7 @@ const GroupTodo = ({ showItems, setShowItems }) => {
                                             <Button
                                                 title="+"
                                                 className={styles.btn}
+                                                onClick={() => setShowModal(!showModal)}
                                             />
                                         </div>
                                     </>
