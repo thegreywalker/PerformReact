@@ -1,0 +1,93 @@
+.groupTodoContainer {
+    width: 80%;
+    margin: 40px auto;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.noCatText {
+    font-weight: 300;
+    font-size: 40px;
+    margin-top: 80px;
+    font-style: italic;
+    text-align: center;
+}
+
+.todoContainer {
+    height: auto;
+    width: 80%;
+    margin: 10px auto;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    box-shadow: 4px 4px 4px lightgray;
+    padding: 5px; 
+    cursor: pointer;
+}
+
+.todoContainer hr {
+    width: 80%;
+    border: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    margin: 5px auto;
+}
+
+.todoContainer__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.todoContainer__header h1 {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+.todoContainer__header p {
+    margin-top: 20px;
+    margin-right: 50px;
+}
+
+.todoBody {
+    margin: 10px;
+    margin-left: 70px;
+    width: 80%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.todo__right__pane {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: blanchedalmond;
+    margin-right: 40px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.btn h1 {
+    color: black;
+    text-align: center;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.noTodoText {
+    margin-top: 10px;
+    margin-left: 370px;
+    font-weight: 600;
+    font-size: 30px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+
+
+/* .todoContainer_extra {
+    margin: 40px auto;
+} */
