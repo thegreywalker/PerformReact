@@ -7,12 +7,12 @@ import TodoModal from "../Modal/TodoModal";
 const Category = ({ name, id, showItems, setShowItems }) => {
     const todos = useTodosStore((state) => state.todos);
     const deleteTodo = useTodosStore((state) => state.removeTodo);
+    const deleteAllTodoById = useTodosStore((state) => state.removeAllTodoById);
+    const deleteCategory = useTodosStore((state) => state.removeCategory);
     const [showModal, setShowModal] = React.useState(false);
-    const [_showToast, setShowToast] = React.useState(false);
     const toggleModal = () => {
         setShowModal(true);
     };
-
 
     return (
         <div className={styles.CategoryContainer}>
@@ -23,9 +23,17 @@ const Category = ({ name, id, showItems, setShowItems }) => {
             {/* Header */}
             <div className={styles.header} onClick={() => setShowItems()}>
                 <h1>{name}</h1>
+                <div
+                    className={styles.delete_btn_container}
+                    onClick={() => {
+                        deleteCategory({ catId: id });
+                        deleteAllTodoById({ catId: id });
+                    }}
+                >
+                    <button className={styles.delete_btn}>X</button>
+                </div>
                 <p>⬇️</p>
             </div>
-
             {/* Body */}
             {showItems && (
                 <Wrapper>
@@ -47,7 +55,7 @@ const Category = ({ name, id, showItems, setShowItems }) => {
                                                 className={styles.btn2}
                                                 onClick={() =>
                                                     deleteTodo({
-                                                        todoId: todo.todoID,
+                                                        todoId: todo.todoId,
                                                     })
                                                 }
                                             >

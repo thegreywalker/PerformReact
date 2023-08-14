@@ -4,6 +4,7 @@ import styles from "./CategoryModal.module.css";
 import Wrapper from "../UI/Wrapper";
 import { createPortal } from "react-dom";
 import { useTodosStore } from "../../../utils/store";
+import { ToastContainer, toast } from "react-toastify";
 
 const Backdrop = ({ onConfirm }) => {
     return <div className={styles.backDrop} onClick={onConfirm} />;
@@ -12,7 +13,17 @@ const Backdrop = ({ onConfirm }) => {
 const ModalOverlay = ({ onConfirm }) => {
     const addCategory = useTodosStore(state => state.addCategory);
     const [value, setValue] = React.useState('');
+
+    const _showToast = () => {
+        toast.warn("Can't leave filed empty & submit")
+    }
+
     const handleAddCategory = () =>{
+
+        if(value.length === 0) {
+            _showToast();
+            return;
+        }
         addCategory({name: value})
         setValue('');
     }
@@ -46,6 +57,7 @@ const CategoryModal = ({ onConfirm }) => {
                 <ModalOverlay onConfirm={onConfirm} />,
                 document.getElementById("modal-root")
             )}
+            <ToastContainer />
         </Wrapper>
     );
 };

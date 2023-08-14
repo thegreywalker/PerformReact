@@ -20,6 +20,7 @@
     margin: 0px;
     color: white;
     font-style: italic;
+    width: 60%;
 }
 
 .todoContainer {
@@ -43,6 +44,20 @@
     background-color: rgb(147, 27, 184);
     border: none;
     margin-left: 20px;
+    cursor: pointer;
+}
+
+.delete_btn_container {
+    width: 7%;
+    text-align: right;
+}
+
+.delete_btn {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: rgb(255, 66, 66);
+    border: none;
     cursor: pointer;
 }
 
