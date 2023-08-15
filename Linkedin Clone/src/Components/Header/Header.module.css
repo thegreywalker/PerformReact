@@ -1,0 +1,59 @@
+.headerContainer {
+    display: flex;
+    height: 3.5rem;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.left_pane {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 10px;
+    border-right: 1px solid lightgray;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.search,
+.home, 
+.network, 
+.work, 
+.message, 
+.notification, 
+.avater {
+    width: 30px;
+    height: 30px;
+    margin-left: 35px;
+}
+
+.avater {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.right_pane {
+    display: flex;
+    align-items: center;
+}
+
+
+.post_jobs, 
+.for_buiseness {
+    width: 35px;
+    height: 35px;
+}
+
+.for_buiseness {
+    margin-left: 30px;
+}
+
+.post_jobs {
+    margin-left: 40px;
+}

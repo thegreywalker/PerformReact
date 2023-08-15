@@ -1,0 +1,52 @@
+.feedContainer {
+    width: 28.5rem;
+    height: 8rem;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+
+.feedContainer_topBar {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 15px;
+}
+
+.input {
+    width: 76%;
+    margin-top: 5px;
+    border-radius: 25px;
+    border: 0.5px solid black;
+    outline: none;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: gray;
+}
+
+.feedContainer_bottomBar {
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.photo,
+.video,
+.calender,
+.article {
+    width: 30px;
+    height: 30px;
+}
