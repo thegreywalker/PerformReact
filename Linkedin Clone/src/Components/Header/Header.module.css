@@ -7,6 +7,18 @@
     z-index: 1000;
 }
 
+.masterContainer {
+    width: 100%;
+    display: flex;
+}
+
+
+
+.headerContent {
+    display: flex;
+    width: 70%;
+}
+
 .left_pane {
     width: 70%;
     display: flex;
@@ -15,6 +27,24 @@
     padding-right: 10px;
     border-right: 1px solid lightgray;
 }
+
+.left_pane p {
+    visibility: hidden;
+}
+
+.searchInput {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+}
+
+.left_pane div {
+    display: flex;
+    align-items: center;
+    width: 70px;
+}
+
+
 
 .logo {
     width: 60px;
@@ -34,6 +64,11 @@
 }
 
 .avater {
+    margin-left: 15px;
+}
+
+
+.avater {
     border-radius: 50%;
     object-fit: cover;
 }
@@ -41,6 +76,16 @@
 .right_pane {
     display: flex;
     align-items: center;
+}
+
+.right_pane p {
+    visibility: hidden;
+}
+
+.right_pane div {
+    display: flex;
+    align-items: center;
+    width: 70px;
 }
 
 
@@ -56,4 +101,134 @@
 
 .post_jobs {
     margin-left: 40px;
+}
+
+
+/* Media Query for large Screens */
+
+@media (min-width: 854px) {
+    .left_pane p {
+        visibility: visible;
+        margin: 0px;
+        font-size: small;
+    }
+
+    .left_pane img {
+        margin-left: 0px;
+    }
+    
+    .left_pane .avaterDiv {
+        width: 60px;
+    }
+
+    .left_pane div {
+        flex-direction: column;
+        width: 87px;
+        justify-content: center;
+    }
+
+    .right_pane p {
+        visibility: visible;
+        font-size: small;
+        margin: 0px;
+    }
+
+    .right_pane div {
+        flex-direction: column;
+        justify-content: center;
+        width: 7rem;
+    }
+
+    .right_pane img {
+        margin-left: 0px;
+    }
+    
+}
+
+@media (min-width: 1025px) {
+    .search, .searchContainer p {
+        visibility: hidden;
+        height: 0px;
+        width: 0px;
+    }
+
+    .left_pane .searchContainer {
+        width: 17rem;
+        height: 100%;
+        justify-content: center;
+    }
+    
+    .left_pane {
+        position: relative;
+    }
+    
+
+    .searchInput {
+        visibility: visible;
+        width: 17rem;
+        height: 35px;
+        border-radius: 7px;
+        background-color: #eef3f7;
+        position: absolute;
+        border: none;
+        padding-left: 20px;
+        font-size: large;
+        left: 3.7rem;
+    }
+    
+    .left_pane {
+        padding-right: 5px;
+        justify-content: space-between;
+    }
+
+    .left_pane div {
+        width: 75px;
+    }
+
+    .left_pane {
+        width: 76%;
+    }
+
+    .left_pane div {
+        margin: 0px;
+        width: 70px;
+    }
+
+    .left_pane .jobsDiv {
+        width: 30px;
+    }
+
+    .left_pane .networkDiv {
+        width: 75px;
+    }
+
+    .left_pane .homeDiv {
+        width: 35px;
+    }
+
+
+    .left_pane img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .left_pane .logo {
+        width: 60px;
+        height: 60px;
+    }
+    .searchContainer {
+        width: auto;
+        height: 30px;
+    }
+
+    .right_pane div {
+        width: 8rem;
+    }
+}
+
+@media (min-width: 1235px) {
+    .masterContainer {
+        width: 1200px;
+        margin: auto;
+    }
 }

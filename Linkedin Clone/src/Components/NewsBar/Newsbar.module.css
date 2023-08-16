@@ -1,0 +1,29 @@
+.newsBarContainer {
+    background-color: white;
+    width: 15.5rem;
+    height: 24rem;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+}
+
+.newsBarBottomContainer {
+    background-color: white;
+    width: 15.5rem;
+    height: 15rem;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    margin-top: 10px;
+    margin-right: 100px;
+    position: sticky;
+    top: 5rem;
+}
+
+@media (min-width: 1200px) {
+    .newsBarContainer {
+        width: 20rem;
+    }
+
+    .newsBarBottomContainer {
+        width: 20rem;
+    }
+}
